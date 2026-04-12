@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Comentários - {{ artigo.titulo }}</title>
+    <style> body { font-family: Arial; margin: 40px; } </style>
+</head>
+<body>
+    <h1>Comentários sobre: {{ artigo.titulo }}</h1>
+    
+    <h3>Escrever novo comentário:</h3>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="texto" rows="5" cols="80" placeholder="Escreve aqui o teu comentário..."></textarea><br><br>
+        <button type="submit">Publicar Comentário</button>
+    </form>
+
+    <hr>
+    <h3>Comentários existentes:</h3>
+    {% for comentario in comentarios %}
+        <p><strong>{{ comentario.data_comentario|date:"d/m/Y H:i" }}</strong><br>
+        {{ comentario.texto|linebreaks }}</p>
+        <hr>
+    {% empty %}
+        <p>Ainda não há comentários.</p>
+    {% endfor %}
+
+    <a href="{% url 'detalhe_artigo' artigo.id %}">← Voltar ao artigo</a>
+</body>
+</html>
