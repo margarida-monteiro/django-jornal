@@ -1,41 +1,152 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial;
-    background-color: #f4f4f4;
-    max-width: 600px;
-    margin: auto;
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #eef2f7;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+header {
+    margin-bottom: 32px;
 }
 
 h1 {
-    color: darkblue;
+    margin: 0 0 0.6rem;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    color: #0f172a;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    color: blue;
+h3 {
+    margin-top: 1.8rem;
+    color: #0f172a;
 }
 
 ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 li {
-    margin: 10px 0;
-    background: white;
-    border-radius: 5px;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 18px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+a {
+    color: #1d4ed8;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover,
+a:focus {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+p {
+    line-height: 1.75;
+    margin: 1rem 0;
 }
 
 textarea {
-    width: 300px;
-    height: 100px;
+    width: 100%;
+    min-height: 160px;
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 16px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: #111827;
+    background: #f8fafc;
+    resize: vertical;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.16);
 }
 
 button {
-    background-color: blue;
-    color: white;
-    padding: 10px;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 14px 24px;
     border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover,
+button:focus {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.form-group {
+    margin-top: 1rem;
+}
+
+.comment-card {
+    margin-bottom: 20px;
+    padding: 18px 20px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+}
+
+.comment-meta {
+    margin-bottom: 0.75rem;
+    color: #475569;
+}
+
+hr.page-divider {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 32px 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #475569;
+}
+
+.back-link:hover,
+.back-link:focus {
+    color: #0f172a;
+}
+
+footer {
+    margin-top: 40px;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 24px 16px;
+    }
+
+    li,
+    .comment-card {
+        padding: 16px;
+    }
 }

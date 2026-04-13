@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 {% load static %}
-
-<link rel="stylesheet" href="{% static 'noticias/style.css' %}">
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jornal Online</title>
-    <style> body { font-family: Arial; margin: 40px; } </style>
+    <link rel="stylesheet" href="{% static 'noticias/style.css' %}">
 </head>
 <body>
-    <h1>Jornal Online</h1>
-    <ul>
-        {% for artigo in artigos %}
-            <li>
-                <a href="{% url 'detalhe_artigo' artigo.id %}">{{ artigo.titulo }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <header>
+            <h1>Jornal Online</h1>
+            <p>Últimas notícias e artigos para ler hoje.</p>
+        </header>
+
+        <ul>
+            {% for artigo in artigos %}
+                <li>
+                    <a class="card-link" href="{% url 'detalhe_artigo' artigo.id %}">{{ artigo.titulo }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
